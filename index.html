@@ -26,7 +26,7 @@ body::before{content:'';position:fixed;top:-200px;left:50%;transform:translateX(
 .ticker-wrap{background:var(--navy-mid);border-bottom:1px solid var(--border);padding:10px 0;overflow:hidden;position:relative;z-index:99;}
 .ticker-label{display:inline-block;background:var(--saffron);color:white;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 14px;border-radius:3px;margin-right:20px;flex-shrink:0;}
 .ticker-track{display:flex;align-items:center;width:100%;}
-.ticker-content{display:flex;align-items:center;animation:ticker 45s linear infinite;white-space:nowrap;}
+.ticker-content{display:flex;align-items:center;animation:ticker 90s linear infinite;white-space:nowrap;}
 .ticker-content a{color:var(--saffron-light);font-size:13px;font-weight:500;text-decoration:none;margin-right:48px;}
 .ticker-content a:hover{color:white;}
 .ticker-content a::before{content:'● ';font-size:8px;margin-right:6px;color:var(--saffron);}
@@ -85,6 +85,10 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .btn-secondary{display:inline-block;background:transparent;color:var(--white);font-weight:600;font-size:15px;padding:16px 36px;border-radius:50px;text-decoration:none;border:1px solid rgba(255,255,255,0.2);transition:border-color 0.2s,background 0.2s;}
 .btn-secondary:hover{border-color:var(--saffron);background:rgba(255,107,0,0.06);}
 .contact-note{font-size:12px;color:var(--muted);}
+.btn-sedo{display:inline-block;background:linear-gradient(135deg,#0055aa,#0088ff);color:var(--white);font-weight:700;font-size:15px;padding:16px 28px;border-radius:50px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(0,85,170,0.35);}
+.btn-sedo:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,85,170,0.5);}
+.btn-atom{display:inline-block;background:linear-gradient(135deg,#6f42c1,#a855f7);color:var(--white);font-weight:700;font-size:15px;padding:16px 28px;border-radius:50px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(111,66,193,0.35);}
+.btn-atom:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(111,66,193,0.5);}
 
 /* STATS */
 .stats{position:relative;z-index:1;display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--navy-mid);margin-bottom:70px;}
@@ -130,6 +134,25 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 footer{position:relative;z-index:1;text-align:center;padding:28px 24px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);}
 footer strong{color:var(--off-white);}
 
+
+/* RECENT SALES FLASH */
+.sales-section{position:relative;z-index:1;max-width:820px;margin:0 auto 70px;padding:0 24px;}
+.sales-box{background:var(--card-bg);border:1px solid rgba(255,207,0,0.4);border-radius:20px;padding:32px 36px;}
+.sales-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;}
+.sales-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--off-white);}
+.sales-live{display:inline-flex;align-items:center;gap:6px;background:rgba(255,50,50,0.15);border:1px solid rgba(255,50,50,0.5);border-radius:20px;padding:4px 14px;font-size:11px;font-weight:700;color:#ff4444;letter-spacing:1px;text-transform:uppercase;}
+.sales-live .flash-dot{width:7px;height:7px;background:#ff4444;border-radius:50%;animation:flashdot 1s ease-in-out infinite;}
+@keyframes flashdot{0%,100%{opacity:1;}50%{opacity:0;}}
+.sales-table{width:100%;border-collapse:collapse;}
+.sales-table th{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);}
+.sales-table td{font-size:14px;padding:12px;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;}
+.sales-table tr:last-child td{border-bottom:none;}
+.sales-table tr:hover td{background:rgba(255,107,0,0.05);}
+.domain-name{font-weight:600;color:var(--off-white);}
+.sale-price{font-family:'Syne',sans-serif;font-weight:800;color:#4dff88;font-size:15px;}
+.sale-date{color:var(--muted);font-size:13px;}
+.sale-venue{background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);color:var(--saffron-light);font-size:11px;font-weight:600;padding:3px 10px;border-radius:10px;}
+.sales-note{font-size:12px;color:var(--muted);margin-top:14px;font-style:italic;}
 /* RESPONSIVE */
 @media(max-width:600px){nav{padding:12px 16px;}.stat-item{min-width:130px;}.form-box{padding:24px 18px;}.price-block{padding:20px 24px;}.cta-group{flex-direction:column;align-items:center;}}
 </style>
@@ -199,10 +222,12 @@ footer strong{color:var(--off-white);}
   </div>
 
   <div class="cta-group">
-    <a href="https://www.afternic.com/domain/indiaonai.com" target="_blank" class="btn-primary">🔒 Buy Now — $999</a>
+    <a href="https://www.afternic.com/domain/indiaonai.com" target="_blank" class="btn-primary">🔒 Afternic — $999</a>
+    <a href="https://sedo.com/search/details/?domain=indiaonai.com" target="_blank" class="btn-sedo">🌐 Sedo</a>
+    <a href="https://atom.com/domain/indiaonai.com" target="_blank" class="btn-atom">⚡ Atom</a>
     <a href="#make-offer" class="btn-secondary">💬 Make an Offer</a>
   </div>
-  <p class="contact-note">Secure transfer via Afternic &nbsp;·&nbsp; Fast delivery &nbsp;·&nbsp; Escrow available</p>
+  <p class="contact-note">Secure transfer via Afternic / Sedo / Atom &nbsp;·&nbsp; Escrow available</p>
 </section>
 
 <!-- STATS -->
@@ -275,6 +300,41 @@ footer strong{color:var(--off-white);}
     <div class="comparable-label">✅ Verified Sale — January 2026</div>
     <div class="comparable-sale"><span>AmericaOnAI.com</span> — Sold via Afternic</div>
     <p class="comparable-note">Same naming pattern. Same portfolio. Confirmed transaction establishing a clear market benchmark for Geo-AI .com domains in this series. IndiaOnAI.com represents a larger and faster-growing addressable market.</p>
+  </div>
+</div>
+
+<!-- RECENT INDIA DOMAIN SALES -->
+<div class="sales-section">
+  <div class="sales-box">
+    <div class="sales-header">
+      <div class="sales-title">🇮🇳 Recent India Domain Sales</div>
+      <div class="sales-live"><span class="flash-dot"></span> Live Market Data</div>
+    </div>
+    <table class="sales-table">
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Sale Price</th>
+          <th>Date</th>
+          <th>Venue</th>
+        </tr>
+      </thead>
+      <tbody id="sales-tbody">
+        <tr>
+          <td><span class="domain-name">pearlsindiatour.com</span></td>
+          <td><span class="sale-price">$1,010</span></td>
+          <td><span class="sale-date">2026-06-17</span></td>
+          <td><span class="sale-venue">Namecheap</span></td>
+        </tr>
+        <tr>
+          <td><span class="domain-name">kheloindiaacademy.com</span></td>
+          <td><span class="sale-price">$810</span></td>
+          <td><span class="sale-date">2026-06-17</span></td>
+          <td><span class="sale-venue">GoDaddy</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="sales-note">&#128272; Data sourced from public domain sale records. Updated regularly. India-related .com sales only.</p>
   </div>
 </div>
 
