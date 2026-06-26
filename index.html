@@ -11,14 +11,22 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --saffron:#FF6B00;--saffron-light:#FF9A44;
-  --india-green:#138808;--navy:#0A1628;
-  --navy-mid:#112240;--white:#FFFFFF;
-  --off-white:#F0F4FF;--muted:#8892A4;
-  --card-bg:#0D1F3C;--border:rgba(255,107,0,0.25);
+  --saffron:#FF6B00;
+  --saffron-light:#FF9A44;
+  --india-green:#138808;
+  --india-green-light:#4dff88;
+  --navy:#0A1628;
+  --navy-mid:#112240;
+  --white:#FFFFFF;
+  --off-white:#F0F4FF;
+  --muted:#8892A4;
+  --card-bg:#0D1F3C;
+  --border:rgba(255,107,0,0.25);
   --spaceship:#F43E5C;
-  --gold:#D4AF37;--gold-light:#E8C96A;
-  --font-syne:'Syne',sans-serif;--font-inter:'Inter',sans-serif;
+  --gold:#D4AF37;
+  --gold-light:#E8C96A;
+  --font-syne:'Syne',sans-serif;
+  --font-inter:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth;}
 body{background:var(--navy);color:var(--white);font-family:var(--font-inter);min-height:100vh;overflow-x:hidden;width:100%;-webkit-font-smoothing:antialiased;}
@@ -43,7 +51,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .nav-badge{background:rgba(255,107,0,0.15);border:1px solid var(--saffron);color:var(--saffron);font-size:9px;font-weight:600;padding:2px 10px;border-radius:20px;letter-spacing:0.5px;text-transform:uppercase;white-space:nowrap;}
 
 .clock-bar{background:rgba(255,107,0,0.06);border-bottom:1px solid var(--border);padding:8px 16px;text-align:center;font-family:var(--font-inter);font-size:13px;color:var(--muted);letter-spacing:0.5px;}
-.clock-bar #clock{color:var(--off-white);font-weight:600;font-family:var(--font-syne);font-size:14px;}
+.clock-bar #clock{color:var(--saffron);font-weight:600;font-family:var(--font-syne);font-size:14px;}
 
 .hero{position:relative;z-index:1;text-align:center;padding:32px 12px 28px;width:100%;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:6px;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.3);border-radius:30px;padding:4px 14px;font-size:10px;font-weight:600;color:var(--saffron-light);letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
@@ -66,15 +74,14 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 }
 .domain-line .india{color:var(--saffron);}
 .domain-line .on{color:var(--muted);}
-.domain-line .ai{background:linear-gradient(135deg,#4DB8FF,#138808);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.domain-line .ai{background:linear-gradient(135deg,#4DB8FF,var(--india-green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .domain-line .dotcom{color:var(--gold-light);}
 
 .hero-sub{font-size:14px;color:var(--muted);max-width:480px;margin:0 auto 16px;line-height:1.65;padding:0 8px;}
 .hero-sub strong{color:var(--off-white);}
 
-#geo-message{font-size:13px;color:#4dffaa;font-weight:600;margin-bottom:16px;min-height:18px;font-style:italic;padding:0 12px;}
+#geo-message{font-size:13px;color:var(--india-green-light);font-weight:600;margin-bottom:16px;min-height:18px;font-style:italic;padding:0 12px;}
 
-/* VALUE + PRICE + WHY CARDS — all same size */
 .dual-blocks, .why-cards{
   display:flex;
   flex-wrap:wrap;
@@ -104,7 +111,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
   font-family:var(--font-syne);
   font-size:13px;
   font-weight:700;
-  color:var(--off-white);
+  color:var(--saffron);
   margin-bottom:6px;
   text-align:center;
 }
@@ -115,11 +122,11 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
   text-align:justify;
 }
 .value-label{font-size:9px;color:var(--india-green);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
-.value-num{font-family:var(--font-syne);font-size:clamp(18px,4vw,24px);font-weight:800;color:#4dff88;}
-.value-sub{font-size:9px;color:var(--muted);margin-top:2px;}
+.value-num{font-family:var(--font-syne);font-size:clamp(16px,3.5vw,20px);font-weight:800;color:var(--india-green-light);}
+.value-sub{font-size:8px;color:var(--muted);margin-top:2px;line-height:1.3;}
 .price-label{font-size:9px;font-weight:700;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
-.price-bin{font-family:var(--font-syne);font-size:clamp(28px,6vw,44px);font-weight:800;color:var(--saffron);letter-spacing:-1px;line-height:1;}
-.price-offer{font-size:11px;color:var(--muted);margin-top:4px;}
+.bin-price{font-family:var(--font-syne);font-size:clamp(16px,3.5vw,20px);font-weight:800;color:var(--saffron);line-height:1.1;}
+.price-offer{font-size:10px;color:var(--muted);margin-top:4px;}
 .price-offer span{color:#4DB8FF;font-weight:600;}
 
 .cta-group{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:780px;margin:0 auto 10px;padding:0 12px;width:100%;}
@@ -141,7 +148,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 
 .section{position:relative;z-index:1;max-width:960px;margin:0 auto 40px;padding:0 14px;width:100%;}
 .section-eyebrow{font-size:10px;font-weight:700;color:var(--saffron);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;text-align:center;}
-.section-title{font-family:var(--font-syne);font-size:clamp(20px,5vw,34px);font-weight:800;letter-spacing:-0.5px;margin-bottom:24px;line-height:1.15;text-align:center;}
+.section-title{font-family:var(--font-syne);font-size:clamp(20px,5vw,34px);font-weight:800;letter-spacing:-0.5px;margin-bottom:24px;line-height:1.15;text-align:center;color:var(--white);}
 
 .comparable{background:var(--card-bg);border:1px solid rgba(19,136,8,0.4);border-radius:16px;padding:22px 18px;text-align:center;max-width:560px;margin:0 auto;width:100%;}
 .comparable-label{font-size:10px;color:var(--india-green);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
@@ -152,46 +159,77 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .sales-section{max-width:820px;margin:0 auto 40px;padding:0 14px;width:100%;}
 .sales-box{background:var(--card-bg);border:1px solid rgba(255,207,0,0.4);border-radius:16px;padding:18px 14px;overflow:hidden;}
 .sales-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:6px;}
-.sales-title{font-family:var(--font-syne);font-size:16px;font-weight:800;color:var(--off-white);}
+.sales-title{font-family:var(--font-syne);font-size:16px;font-weight:800;color:var(--saffron);}
 .sales-live{display:inline-flex;align-items:center;gap:5px;background:rgba(255,50,50,0.15);border:1px solid rgba(255,50,50,0.5);border-radius:20px;padding:2px 10px;font-size:9px;font-weight:700;color:#ff4444;letter-spacing:1px;text-transform:uppercase;}
 .flash-dot{width:6px;height:6px;background:#ff4444;border-radius:50%;animation:fd 1s ease-in-out infinite;flex-shrink:0;}
 @keyframes fd{0%,100%{opacity:1;}50%{opacity:0;}}
 .sales-table{display:none;}
 .sales-cards{display:flex;flex-direction:column;gap:10px;}
 .sale-card-item{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;padding:12px 14px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;}
-.sale-card-item .domain{font-weight:600;color:var(--off-white);font-size:14px;}
-.sale-card-item .price{font-family:var(--font-syne);font-weight:700;color:#4dff88;font-size:14px;}
+.sale-card-item .domain{font-weight:600;color:var(--saffron);font-size:14px;}
+.sale-card-item .price{font-family:var(--font-syne);font-weight:700;color:var(--india-green-light);font-size:14px;}
 .sale-card-item .meta{font-size:11px;color:var(--muted);display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
 .sale-venue{background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);color:var(--saffron-light);font-size:9px;font-weight:600;padding:2px 8px;border-radius:8px;}
 .sales-note{font-size:11px;color:var(--muted);margin-top:12px;font-style:italic;line-height:1.5;}
 
+/* PORTFOLIO SECTION — SIMPLE CARDS, NO SPACING */
 .portfolio-section{max-width:960px;margin:0 auto 40px;padding:0 14px;width:100%;}
-.portfolio-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}
-.portfolio-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:14px 16px;text-decoration:none;transition:0.2s;display:block;flex:1 1 150px;max-width:200px;min-width:130px;text-align:center;}
+.portfolio-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+}
+.portfolio-card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:10px 14px;
+  text-decoration:none;
+  transition:0.2s;
+  display:block;
+  flex:0 1 auto;
+  min-width:120px;
+  max-width:180px;
+  text-align:center;
+}
 .portfolio-card:hover{border-color:var(--saffron);transform:translateY(-2px);}
 .portfolio-domain{
-  font-family:var(--font-syne);
-  font-size:clamp(11px,1.2vw,14px);
-  font-weight:800;
-  color:var(--off-white);
-  margin-bottom:4px;
-  word-break:keep-all;
+  font-family:var(--font-inter);
+  font-size:11px;
+  font-weight:600;
+  color:var(--saffron);
   white-space:nowrap;
-  overflow:visible;
-  display:inline-block;
-  width:auto;
+  display:block;
+  line-height:1.2;
+  letter-spacing:0.3px;
 }
-.portfolio-domain span{background:linear-gradient(135deg,var(--saffron),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.portfolio-price{font-size:10px;color:var(--muted);}
-.portfolio-price strong{color:#4dff88;}
-.portfolio-tag{font-size:8px;color:var(--saffron);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+.portfolio-price{
+  font-size:9px;
+  color:var(--muted);
+  margin-top:2px;
+  white-space:nowrap;
+}
+.portfolio-price strong{color:var(--india-green-light);}
+.portfolio-tag{display:none;}
 
 footer{position:relative;z-index:1;text-align:center;padding:18px 16px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.7;}
-footer strong{color:var(--off-white);}
+footer strong{color:var(--saffron);}
 footer a{color:var(--saffron);text-decoration:none;}
 
 .buy-sticky{display:none;position:fixed;bottom:0;left:0;width:100%;padding:10px 16px;background:rgba(10,22,40,0.96);backdrop-filter:blur(8px);border-top:1px solid var(--saffron);z-index:9999;justify-content:center;}
 .buy-sticky .btn{max-width:320px;font-size:15px;padding:14px;margin:0 auto;}
+
+/* INQUIRY SECTION — EMAIL ONLY */
+.form-section{max-width:540px;margin:0 auto 40px;padding:0 14px;width:100%;}
+.form-box{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:32px 20px;text-align:center;}
+.form-box h2{font-family:var(--font-syne);font-size:20px;font-weight:800;margin-bottom:8px;color:var(--saffron);}
+.form-box .form-sub{font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;}
+.email-wrapper{display:inline-flex;align-items:center;gap:12px;background:rgba(255,107,0,0.08);border:1px solid var(--saffron);border-radius:50px;padding:12px 24px;}
+.email-wrapper .icon{font-size:18px;}
+.email-wrapper a{color:var(--saffron);font-size:16px;font-weight:600;text-decoration:none;font-family:var(--font-syne);letter-spacing:0.5px;}
+.email-wrapper a:hover{color:var(--saffron-light);}
+.form-box .response-time{font-size:11px;color:var(--muted);margin-top:16px;}
 
 @media (max-width:768px){
   .cta-group{gap:6px;}
@@ -201,7 +239,8 @@ footer a{color:var(--saffron);text-decoration:none;}
   .portfolio-grid{flex-direction:column;align-items:center;}
   .portfolio-card{max-width:100%;width:100%;flex:1 1 auto;}
   .domain-line{font-size:clamp(34px,10vw,52px);}
-  .portfolio-domain{white-space:normal;font-size:14px;}
+  .portfolio-domain{white-space:normal;font-size:13px;}
+  .email-wrapper{flex-wrap:wrap;justify-content:center;padding:12px 16px;}
 }
 @media (max-width:600px){
   .hero{padding:24px 8px 20px;}
@@ -209,10 +248,10 @@ footer a{color:var(--saffron);text-decoration:none;}
   .btn{font-size:10px;padding:6px 10px;min-width:55px;}
   .stats{flex-wrap:wrap;}
   .stat-item{flex:1 1 50%;border-right:none;border-bottom:1px solid var(--border);}
-  .stat-item:nth-last-child(-n+2){border-bottom:none;}
+  .stat-item:last-child{border-bottom:none;}
   .stat-item:nth-child(2n){border-right:none;}
   .buy-sticky{display:flex;}
-  .portfolio-domain{white-space:normal;font-size:14px;}
+  .portfolio-domain{white-space:normal;font-size:13px;}
   .why-card p{font-size:11px;}
 }
 @media (min-width:601px){
@@ -220,8 +259,8 @@ footer a{color:var(--saffron);text-decoration:none;}
   .sales-table{display:table;width:100%;border-collapse:collapse;}
   .sales-table th{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;padding:6px 8px;text-align:left;border-bottom:1px solid var(--border);}
   .sales-table td{font-size:13px;padding:10px 8px;border-bottom:1px solid rgba(255,255,255,0.04);vertical-align:middle;}
-  .domain-name{font-weight:600;color:var(--off-white);word-break:break-word;}
-  .sale-price{font-family:var(--font-syne);font-weight:700;color:#4dff88;font-size:13px;white-space:nowrap;}
+  .domain-name{font-weight:600;color:var(--saffron);word-break:break-word;}
+  .sale-price{font-family:var(--font-syne);font-weight:700;color:var(--india-green-light);font-size:13px;white-space:nowrap;}
   .sale-date{color:var(--muted);font-size:12px;white-space:nowrap;}
 }
 @media (max-width:380px){
@@ -259,10 +298,7 @@ footer a{color:var(--saffron);text-decoration:none;}
   <div class="hero-eyebrow"><span class="dot"></span>Premium Geo-AI Domain — Available Now</div>
 
   <div class="domain-line">
-    <span class="india">India</span>
-    <span class="on">On</span>
-    <span class="ai">AI</span>
-    <span class="dotcom">.com</span>
+    <span class="india">India</span><span class="on">On</span><span class="ai">AI</span><span class="dotcom">.com</span>
   </div>
 
   <p class="hero-sub">
@@ -275,16 +311,15 @@ footer a{color:var(--saffron);text-decoration:none;}
     <div class="value-counter">
       <div class="value-label">Estimated Value</div>
       <div class="value-num" id="value-counter">$6,126</div>
-      <div class="value-sub">USD &middot; <strong style="color:#4dff88;">Dynadot.com</strong></div>
+      <div class="value-sub">USD &middot; <strong style="color:var(--india-green-light);">Dynadot.com</strong></div>
     </div>
     <div class="price-block">
       <div class="price-label">Buy It Now</div>
-      <div class="price-bin">$999</div>
+      <div class="bin-price">$999</div>
       <div class="price-offer">Make Offer from <span>$599</span></div>
     </div>
   </div>
 
-  <!-- WHY CARDS — same size as value/price blocks -->
   <div class="why-cards">
     <div class="why-card">
       <h3>Geo + Tech = Category King</h3>
@@ -303,7 +338,7 @@ footer a{color:var(--saffron);text-decoration:none;}
     <a href="https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=indiaonai.com" target="_blank" class="btn btn-godaddy">GoDaddy</a>
     <a href="https://www.spaceship.com/domain-search/?query=indiaonai.com&beast=false&tab=domains" target="_blank" class="btn btn-spaceship">Spaceship</a>
   </div>
-  <p class="contact-note">Secure transfer via Afternic / Sedo / Atom / GoDaddy / Spaceship &middot; Escrow available</p>
+  <p class="contact-note">Secure transfer via Afternic / Sedo / Atom / GoDaddy / Spaceship &nbsp;·&nbsp; Escrow available</p>
 </section>
 
 <div class="stats">
@@ -345,30 +380,48 @@ footer a{color:var(--saffron);text-decoration:none;}
   </div>
 </div>
 
+<!-- SIMPLE PORTFOLIO CARDS — NO SPACING, PLAIN TEXT -->
 <div class="portfolio-section">
   <div class="section-eyebrow">Also Available</div>
   <div class="section-title">From the same Geo-AI portfolio.</div>
   <div class="portfolio-grid">
     <a href="https://cryptoaispace.com" target="_blank" class="portfolio-card">
-      <div class="portfolio-domain"><span>Crypto</span>AiSpace.com</div>
-      <div class="portfolio-price">BIN <strong>$1,699</strong> &middot; Offer from $999</div>
-      <div class="portfolio-tag">Premium</div>
+      <span class="portfolio-domain">CryptoAiSpace.com</span>
+      <span class="portfolio-price">BIN <strong>$1,699</strong> &middot; Offer $999</span>
     </a>
     <a href="https://cashproofai.com" target="_blank" class="portfolio-card">
-      <div class="portfolio-domain"><span>CashProof</span>AI.com</div>
-      <div class="portfolio-price">BIN <strong>$49,999</strong> &middot; Offer from $29,999</div>
-      <div class="portfolio-tag">Premium</div>
+      <span class="portfolio-domain">CashProofAI.com</span>
+      <span class="portfolio-price">BIN <strong>$49,999</strong> &middot; Offer $29,999</span>
     </a>
     <a href="https://germanyonai.com" target="_blank" class="portfolio-card">
-      <div class="portfolio-domain"><span>Germany</span>OnAI.com</div>
-      <div class="portfolio-price">BIN <strong>$999</strong> &middot; Offer from $599</div>
-      <div class="portfolio-tag">Available</div>
+      <span class="portfolio-domain">GermanyOnAI.com</span>
+      <span class="portfolio-price">BIN <strong>$999</strong> &middot; Offer $599</span>
     </a>
     <a href="https://chinaonai.com" target="_blank" class="portfolio-card">
-      <div class="portfolio-domain"><span>China</span>OnAI.com</div>
-      <div class="portfolio-price">BIN <strong>$999</strong> &middot; Offer from $599</div>
-      <div class="portfolio-tag">Available</div>
+      <span class="portfolio-domain">ChinaOnAI.com</span>
+      <span class="portfolio-price">BIN <strong>$999</strong> &middot; Offer $599</span>
     </a>
+    <a href="https://desifresh.in" target="_blank" class="portfolio-card">
+      <span class="portfolio-domain">DesiFresh.in</span>
+      <span class="portfolio-price">BIN <strong>$999</strong> &middot; Offer $499</span>
+    </a>
+    <a href="https://rupeeai.in" target="_blank" class="portfolio-card">
+      <span class="portfolio-domain">RupeeAi.in</span>
+      <span class="portfolio-price">BIN <strong>$999</strong> &middot; Offer $599</span>
+    </a>
+  </div>
+</div>
+
+<!-- INQUIRY SECTION — EMAIL ONLY -->
+<div class="form-section" id="inquiry">
+  <div class="form-box">
+    <h2>Make an Offer</h2>
+    <p class="form-sub">Serious offers from $599 considered. We respond within 24 hours.</p>
+    <div class="email-wrapper">
+      <span class="icon">📧</span>
+      <a href="mailto:beherark1964@gmail.com">beherark1964@gmail.com</a>
+    </div>
+    <p class="response-time">We respond to all inquiries within 24 hours.</p>
   </div>
 </div>
 
@@ -381,27 +434,86 @@ footer a{color:var(--saffron);text-decoration:none;}
 <div class="tricolor-bar"></div>
 
 <div class="buy-sticky" id="stickyBuy">
-  <a href="https://www.afternic.com/domain/indiaonai.com" target="_blank" class="btn btn-primary">Buy Now — $999</a>
+  <a href="#inquiry" class="btn btn-primary">Buy Now — $999</a>
 </div>
 
 <script>
-function updateClock() {
+// ─── TIMEZONE AUTO-DETECTION ───
+const countryTimezones = {
+  'CN': 'Asia/Shanghai', 'US': 'America/New_York', 'GB': 'Europe/London',
+  'UK': 'Europe/London', 'IN': 'Asia/Kolkata', 'DE': 'Europe/Berlin',
+  'FR': 'Europe/Paris', 'JP': 'Asia/Tokyo', 'SG': 'Asia/Singapore',
+  'AU': 'Australia/Sydney', 'CA': 'America/Toronto', 'BR': 'America/Sao_Paulo',
+  'RU': 'Europe/Moscow', 'ZA': 'Africa/Johannesburg', 'AE': 'Asia/Dubai',
+  'IT': 'Europe/Rome', 'ES': 'Europe/Madrid', 'NL': 'Europe/Amsterdam',
+  'SE': 'Europe/Stockholm', 'NO': 'Europe/Oslo', 'DK': 'Europe/Copenhagen',
+  'FI': 'Europe/Helsinki', 'PL': 'Europe/Warsaw', 'GR': 'Europe/Athens',
+  'TR': 'Europe/Istanbul', 'IL': 'Asia/Jerusalem', 'SA': 'Asia/Riyadh',
+  'EG': 'Africa/Cairo', 'NG': 'Africa/Lagos', 'KE': 'Africa/Nairobi',
+  'AR': 'America/Buenos_Aires', 'CL': 'America/Santiago', 'CO': 'America/Bogota',
+  'MX': 'America/Mexico_City', 'NZ': 'Pacific/Auckland', 'PH': 'Asia/Manila',
+  'MY': 'Asia/Kuala_Lumpur', 'ID': 'Asia/Jakarta', 'TH': 'Asia/Bangkok',
+  'VN': 'Asia/Ho_Chi_Minh', 'KR': 'Asia/Seoul', 'TW': 'Asia/Taipei',
+  'HK': 'Asia/Hong_Kong', 'IE': 'Europe/Dublin', 'PT': 'Europe/Lisbon',
+  'CH': 'Europe/Zurich', 'AT': 'Europe/Vienna', 'BE': 'Europe/Brussels',
+  'CZ': 'Europe/Prague', 'HU': 'Europe/Budapest'
+};
+
+let clockTimezone = null;
+let clockCountry = null;
+
+async function getCountryCode() {
+  try {
+    const res = await fetch('https://ipapi.co/json/');
+    const data = await res.json();
+    return data.country_code || null;
+  } catch(e) {
+    try {
+      const res2 = await fetch('https://ip-api.com/json/');
+      const data2 = await res2.json();
+      return data2.countryCode || null;
+    } catch(e2) {
+      return null;
+    }
+  }
+}
+
+function getTimezoneForCountry(countryCode) {
+  if (countryCode && countryTimezones[countryCode]) {
+    return countryTimezones[countryCode];
+  }
+  return Intl.DateTimeFormat().resolvedOptions().timeZone;
+}
+
+async function initClock() {
+  const countryCode = await getCountryCode();
+  clockCountry = countryCode || 'Unknown';
+  clockTimezone = getTimezoneForCountry(countryCode);
+  updateClockWithTimezone();
+  setInterval(updateClockWithTimezone, 1000);
+}
+
+function updateClockWithTimezone() {
   const now = new Date();
-  const options = { 
-    weekday: 'short', 
-    year: 'numeric', 
-    month: 'short', 
+  const options = {
+    weekday: 'short',
+    year: 'numeric',
+    month: 'short',
     day: 'numeric',
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
-    hour12: true
+    hour12: true,
+    timeZone: clockTimezone || Intl.DateTimeFormat().resolvedOptions().timeZone
   };
-  document.getElementById('clock').textContent = now.toLocaleString('en-US', options);
+  const formatted = now.toLocaleString('en-US', options);
+  const countryLabel = clockCountry && clockCountry !== 'Unknown' ? ` 🇮🇳 ${clockCountry}` : '';
+  document.getElementById('clock').textContent = formatted + countryLabel;
 }
-updateClock();
-setInterval(updateClock, 1000);
 
+initClock();
+
+// ─── TICKER ───
 async function loadNewsRSS() {
   const query = encodeURIComponent('India AI artificial intelligence');
   const rssUrl = `https://news.google.com/rss/search?q=${query}&hl=en-IN&gl=IN&ceid=IN:en`;
@@ -434,6 +546,7 @@ async function loadNewsRSS() {
 }
 loadNewsRSS();
 
+// ─── COUNTER ANIMATION ───
 function animateCounter() {
   const target = 6126;
   const el = document.getElementById('value-counter');
@@ -447,6 +560,7 @@ function animateCounter() {
 }
 setTimeout(animateCounter, 800);
 
+// ─── GEO MESSAGE ───
 async function detectGeo() {
   try {
     const res = await fetch('https://ipapi.co/json/');
